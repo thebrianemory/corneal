@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email       = "the@brianemory.com"
   spec.homepage    = "http://thebrianemory.github.io/corneal/"
   spec.authors     = ["Brian Emory"]
-  spec.licenses    = "MIT-LICENSE"
+  spec.licenses    = "MIT"
 
   spec.executables = ['corneal']
   spec.default_executable = 'corneal'
@@ -24,9 +24,9 @@ Gem::Specification.new do |spec|
       "lib/templates/public/javascripts/.gitkeep"
     ] +
     Dir.glob("spec/**/*") +
-    %w(Gemfile Gemfile.lock MIT-LICENSE README.md Rakefile)
+    %w(Gemfile Gemfile.lock LICENSE README.md Rakefile)
 
   spec.add_runtime_dependency('thor', '~> 0.18')
-  spec.add_development_dependency('bundler', '~> 1.5.1')
+  spec.add_development_dependency('bundler', '~> 1.5', '>= 1.5.1')
   spec.add_development_dependency('minitest', '~> 5.2')
 end
