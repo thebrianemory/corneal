@@ -3,7 +3,7 @@
 require "extensions/string"
 require "thor/group"
 
-module Hazel
+module Corneal
   class CLI < Thor::Group
     include Thor::Actions
 
@@ -16,7 +16,7 @@ module Hazel
     class_option :bundle, :type => :boolean, :desc => "Run bundle after generating the app"
     class_option :git, :type => :boolean, :desc => "Initialize a Git repository"
 
-    # Creates instance variables from options passed to hazel.
+    # Creates instance variables from options passed to corneal.
     def setup
       @app_path = name.directory_name
       @name     = name.file_name

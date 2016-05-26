@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 $:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "..", "lib")))
 
-require "hazel/cli"
+require "corneal/cli"
 
-Hazel::CLI.start
+Corneal::CLI.start

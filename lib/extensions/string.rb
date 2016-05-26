@@ -1,4 +1,4 @@
-module Hazel
+module Corneal
   module Extensions
     module String
       def camel_case
@@ -34,4 +34,4 @@ module Hazel
   end
 end
 
-String.send(:include, Hazel::Extensions::String)
+String.send(:include, Corneal::Extensions::String)

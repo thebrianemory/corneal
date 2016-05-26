@@ -1,12 +1,18 @@
-![Corneal](http://c7.github.com/hazel/images/hazel_small.png)
+![Corneal](http://thebrianemory.github.io/corneal/images/corneal-small.png)
 
-A simple Sinatra app generator, heavily based on [snfn](https://github.com/zachpendleton/snfn).
+## Why this exists
 
-![Using Hazel](http://c7.github.com/hazel/images/using_hazel.gif)
+When I was creating my first major Sinatra project, [Cook This Way](https://github.com/thebrianemory/cook-this-way) for [Learn Verified](https://learn.co/with/thebrianemory), I was looking for a way to build a skeleton similar to running
+
+    rails new app-name
+
+[Hazel](https://github.com/c7/hazel) was the closest thing I could find. While it did provide a pretty good initial setup, I still had to tweak some things. The views were sitting in the root directory while I wanted them to reside in an app folder along with my models and controllers.
+
+I also wanted to create a gem for future Learn students so they could easily get started building their projects. Although built with them in mind, this can get you off and running with any Sinatra app.
 
 ## Installation
 
-    gem install hazel
+    gem install corneal
 
 ## Configuration
 
@@ -22,24 +28,24 @@ A simple Sinatra app generator, heavily based on [snfn](https://github.com/zachp
 
 Standard app, using sqlite.
 
-    hazel my_app
+    corneal app-name
 
 App using MySQL and Redis.
 
-    hazel my_app -d mysql --redis
+    corneal app-name -d mysql --redis
 
 App using MongoDB and Redis, then run bundle install.
 
-    hazel my_app -d mongo --redis --bundle
+    corneal app-name -d mongo --redis --bundle
 
 App using Redis, RVM, and Git repo
 
-    hazel my_app --redis --rvm --git-repo
+    corneal app-name --redis --rvm --git-repo
 
-After Hazel is done generating an app, you can `cd` into your apps
+After Corneal is done generating an app, you can `cd` into your apps
 directory and `rackup`
 
-    cd my_app; rackup
+    cd app-name; rackup
 
 ## Architecture
 
@@ -63,9 +69,13 @@ and `config/initializers/database.rb`).
 *  [Sequel Migrations](http://sequel.rubyforge.org/rdoc/files/doc/migration_rdoc.html)
 *  [Sequel Models](http://sequel.rubyforge.org/rdoc/classes/Sequel/Model.html)
 
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/thebrianemory/nfl-top-stories-cli-gem. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
 ## License
 
-    Copyright (c) 2014 Peter Hellberg
+    Copyright (c) 2016 Brian Emory
 
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the

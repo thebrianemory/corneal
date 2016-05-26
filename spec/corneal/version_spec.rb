@@ -1,8 +1,8 @@
 require_relative "../spec_helper"
-require_relative "../../lib/hazel/version"
+require_relative "../../lib/corneal/version"
 
-describe Hazel::VERSION do
-  subject { Hazel::VERSION }
+describe Corneal::VERSION do
+  subject { Corneal::VERSION }
 
   let(:major)  { subject::MAJOR  }
   let(:minor)  { subject::MINOR  }
