@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name        = "corneal"
   spec.version     = Corneal::VERSION::STRING
   spec.summary     = "A Sinatra app generator."
-  spec.description = "Corneal allows you to easily start building your Sinatra projects."
+  spec.description = "Corneal is a Sinatra app generator with Rails-like simplicity."
   spec.email       = "the@brianemory.com"
   spec.homepage    = "http://thebrianemory.github.io/corneal/"
   spec.authors     = ["Brian Emory"]
