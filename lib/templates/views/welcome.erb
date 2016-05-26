@@ -1,0 +1,19 @@
+<h2>Sinatra Template Default Page</h2>
+
+<div class="content">
+  <p>Welcome to the Sinatra Template! If you're seeing this page, then everything is working
+  as expected. To get started, delete this file (<code>views/welcome.erb)</code> and begin adding
+  your own actions to <code>app.rb</code>. For more information, see the README.</p>
+</div>
+
+<div class="sidebar">
+  <h3>Environment</h3>
+  <ul>
+    <li><b>Ruby:</b> <%= RUBY_VERSION %></li>
+    <li><b>Environment:</b> <%= ENV["RACK_ENV"] %></li>
+    <li><b>Server:</b> <%= @env["SERVER_SOFTWARE"] %></li>
+    <li><b>Port:</b> <%= @env["SERVER_PORT"] %></li>
+  </ul>
+  
+  <a href="http://c7.github.com/hazel/"><img src="/images/hazel_small.png" alt="Hazel" /></a>
+</div>
