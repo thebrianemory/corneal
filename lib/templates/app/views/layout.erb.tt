@@ -15,16 +15,11 @@
 </head>
 <body>
   <div class="wrapper">
-    <header class="branding">
-      <h1><%= @name.camel_case %></h1>
-    </header>
 
-    <div class="main">
       <%%= yield %>
-    </div>
 
     <footer class="branding">
-      <small>&copy; <%%= Time.now.year %></small>
+      <small>&copy; <%= Time.now.year %> <strong><%= @name.camel_case %></strong></small>
     </footer>
   </div>
 
@@ -34,4 +29,3 @@
     <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
   <![endif]-->
 </body>
-

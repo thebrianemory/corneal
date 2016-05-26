@@ -39,6 +39,7 @@ module Corneal
       empty_directory File.join(@app_path, 'db/migrate') unless @database.empty?
 
       create_file File.join(@app_path, "lib", ".gitkeep")
+      template "config/environment.rb", File.join(@app_path, "config/environment.rb")
     end
 
     def create_public_directory
@@ -49,16 +50,14 @@ module Corneal
       template "public/favicon.ico", File.join(@app_path, "public/favicon.ico")
     end
 
-    def create_view_directory
-      directory "views", File.join(@app_path, "views")
-    end
-
-    def create_app
-      template "app.rb", File.join(@app_path, "#{@name}.rb")
+    def create_app_directory
+      %w{app/controllers app/models app/views}.each do |dir|
+        directory dir, File.join(@app_path, dir)
+      end
     end
 
     def create_app_spec
-      template "spec/app_spec.rb", File.join(@app_path, "spec/#{@name}_spec.rb")
+      template "spec/application_controller_spec.rb", File.join(@app_path, "spec/application_controller_spec.rb")
     end
 
     def create_spec_helper

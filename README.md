@@ -2,13 +2,51 @@
 
 ## Why this exists
 
-When I was creating my first major Sinatra project, [Cook This Way](https://github.com/thebrianemory/cook-this-way) for [Learn Verified](https://learn.co/with/thebrianemory), I was looking for a way to build a skeleton similar to running
+When I was creating my first major Sinatra project, [Cook This Way](https://github.com/thebrianemory/cook-this-way), while doing [Learn Verified](https://learn.co/with/thebrianemory), I was looking for a way to build a Sinatra skeleton similar to running
 
     rails new app-name
 
-[Hazel](https://github.com/c7/hazel) was the closest thing I could find. While it did provide a pretty good initial setup, I still had to tweak some things. The views were sitting in the root directory while I wanted them to reside in an app folder along with my models and controllers.
+[Hazel](https://github.com/c7/hazel) was the closest thing I could find and this gem is based largely off of it. While it did provide a pretty good initial setup, I still had to tweak some things. The views were sitting in the root directory while I wanted them to reside in an app folder along with my models and controllers. There was also no environment.rb in the config folder as I had become accustom to having.
 
 I also wanted to create a gem for future Learn students so they could easily get started building their projects. Although built with them in mind, this can get you off and running with any Sinatra app.
+
+Install the gem, run `corneal app-name`, run `bundle`, and you're all set! You can start up your server with `shotgun` and verify everything is working. It is as simple as that.
+
+It uses a file structure similar to what you would see with Rails.
+
+Directory structure:
+```
+├── config.ru
+├── Gemfile
+├── Gemfile.lock
+├── Rakefile
+├── README
+├── app
+│   ├── controllers
+│   │   └── application_controller.rb
+│   ├── models
+│   └── views
+│       ├── layout.erb
+│       └── welcome.erb
+├── config
+│   ├── initializers
+│   └── environment.rb
+├── db
+│   ├── development.sqlite
+│   ├── schema.rb
+│   └── test.sqlite
+├── lib
+│   └── .gitkeep
+└── public
+|   ├── images
+|   ├── javascripts
+|   └── stylesheets
+|       └── main.css
+└── spec
+    ├── application_controller_spec.rb
+    └── spec_helper.rb
+```
+
 
 ## Installation
 
@@ -16,62 +54,31 @@ I also wanted to create a gem for future Learn students so they could easily get
 
 ## Configuration
 
-* `--capistrano` Include Capistrano
-* `-d` Database. Options are "postgres," "mysql," "sqlite", and "mongo."
-   Default is ""
-* `--redis` Include Redis configuration options.
 * `--rvm` Create .ruby-version (ruby-2.1.0) and .ruby-gemset
 * `--bundle` Run bundle after generating the app
 * `--git` Initialize a Git repository
 
 ## Example
 
-Standard app, using sqlite.
+To generate your app
 
     corneal app-name
 
-App using MySQL and Redis.
-
-    corneal app-name -d mysql --redis
-
-App using MongoDB and Redis, then run bundle install.
-
-    corneal app-name -d mongo --redis --bundle
-
-App using Redis, RVM, and Git repo
-
-    corneal app-name --redis --rvm --git-repo
-
 After Corneal is done generating an app, you can `cd` into your apps
-directory and `rackup`
+directory and `shotgun`
 
-    cd app-name; rackup
+    cd app-name; shotgun
 
-## Architecture
+Visit [http://localhost:9393/](http://localhost:9393/) to verify your app is running.
 
-The template autoloads files in config/initializers and
-/lib. Database configuration options are stored in `config/db.yml`
-and are loaded via `config/initializers/database.rb`.
+You can verify by running the included test
 
-## DB Setup
+    rspec
 
-[Sequel](http://sequel.rubyforge.org) is used as an ORM for
-relational databases, and migrations are stored in db/migrate.
-Migrations can be run using the rake command `rake db:migrate`.
-
-[mongodb_model](https://github.com/alexeypetrushin/mongodb_model)
-is used for Mongo apps, with the config options
-stored in the same files as relational databases (`config/db.yml`
-and `config/initializers/database.rb`).
-
-### More information
-
-*  [Sequel Migrations](http://sequel.rubyforge.org/rdoc/files/doc/migration_rdoc.html)
-*  [Sequel Models](http://sequel.rubyforge.org/rdoc/classes/Sequel/Model.html)
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/thebrianemory/nfl-top-stories-cli-gem. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/thebrianemory/corneal This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 

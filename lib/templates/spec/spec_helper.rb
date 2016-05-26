@@ -1,26 +1,36 @@
-# encoding: UTF-8
+ENV["SINATRA_ENV"] = "test"
 
-require 'bundler'
-
-Bundler.setup
-Bundler.require
-
-ENV["RACK_ENV"] = "test"
-
-require 'minitest/pride'
-require 'minitest/autorun'
-require 'minitest/spec'
+require_relative '../config/environment'
 require 'rack/test'
-<% if @redis %>
-require 'fakeredis'
-REDIS = Redis.new
-<% end %>
+require 'capybara/rspec'
+require 'capybara/dsl'
 
-require "find"
-%w{./config/initializers ./lib}.each do |load_path|
-  Find.find(load_path) { |f| require f if f.match(/\.rb$/) }
+if ActiveRecord::Migrator.needs_migration?
+  raise 'Migrations are pending. Run `rake db:migrate SINATRA_ENV=test` to resolve the issue.'
 end
 
-class MiniTest::Spec
-  include Rack::Test::Methods
+ActiveRecord::Base.logger = nil
+
+RSpec.configure do |config|
+  config.run_all_when_everything_filtered = true
+  config.filter_run :focus
+  config.include Rack::Test::Methods
+  config.include Capybara::DSL
+  DatabaseCleaner.strategy = :truncation
+
+  config.before do
+    DatabaseCleaner.clean
+  end
+
+  config.after do
+    DatabaseCleaner.clean
+  end
+
+  config.order = 'default'
 end
+
+def app
+  Rack::Builder.parse_file('config.ru').first
+end
+
+Capybara.app = app

@@ -1,40 +1,20 @@
-source "https://rubygems.org/"
+source 'http://rubygems.org'
 
-# App Stack
-gem "sinatra", "~> 1.4"
+gem 'sinatra'
+gem 'activerecord', :require => 'active_record'
+gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
+gem 'rake'
+gem 'require_all'
+gem 'sqlite3'
+gem 'thin'
+gem 'shotgun'
+gem 'pry'
+gem 'bcrypt'
+gem "tux"
 
-<% unless @database.empty? -%>
-# Database Stack
-<% unless @database == 'mongo' -%>
-gem "sequel"
-<% end -%>
-<% if @database == "sqlite" -%>
-gem "sqlite3"
-<% elsif @database == "postgres" -%>
-gem "pg"
-<% elsif @database == "mysql" -%>
-gem "mysql2"
-<% elsif @database == "mongo" -%>
-gem "bson_ext", "~> 1.8"
-gem "mongodb_model", "~> 2.1"
-<% end -%>
-<% end -%>
-
-<% if @redis -%>
-# Redis
-gem "hiredis", "~> 0.4"
-gem "redis", "~> 3.0", :require => ["redis/connection/hiredis", "redis"]
-gem "fakeredis", "~> 0.4"
-
-<% end -%>
-group :development do
-  gem "rake", "~> 10.0"
-  gem "minitest", "~> 5.2"
-  gem "rack-test", "~> 0.6"
-<% if @capistrano -%>
-  gem "capistrano", "~> 3.0"
-<% if @rvm_gemset -%>
-  gem "capistrano-rvm"
-<% end -%>
-<% end -%>
+group :test do
+  gem 'rspec'
+  gem 'capybara'
+  gem 'rack-test'
+  gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
 end

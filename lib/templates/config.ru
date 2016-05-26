@@ -1,18 +1,7 @@
-# Load path and gems/bundler
-$LOAD_PATH << File.expand_path(File.dirname(__FILE__))
+require './config/environment'
 
-require "bundler"
-Bundler.require
-
-# Local config
-require "find"
-
-%w{config/initializers lib}.each do |load_path|
-  Find.find(load_path) { |f|
-    require f unless f.match(/\/\..+$/) || File.directory?(f)
-  }
+if ActiveRecord::Migrator.needs_migration?
+  raise 'Migrations are pending. Run `rake db:migrate` to resolve the issue.'
 end
 
-# Load app
-require "<%= @name %>"
-run <%= @name.camel_case %>
+run ApplicationController

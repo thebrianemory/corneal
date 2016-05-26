@@ -13,7 +13,7 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background: #eee;
+    background-color: lightblue;
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
@@ -113,4 +113,3 @@
     line-height: 24px;
   }
 }
-
