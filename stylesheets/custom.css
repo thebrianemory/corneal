@@ -1,3 +1,7 @@
+body {
+    background-color: lightblue;
+}
+
 .main-image {
-  height: 100px;
+  margin-top: 20px;
 }
