@@ -5,3 +5,7 @@ body {
 .main-image {
   margin-top: 20px;
 }
+
+.list-font, p {
+  font-size: 1.3em;
+}
