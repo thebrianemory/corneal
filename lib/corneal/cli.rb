@@ -51,7 +51,7 @@ module Corneal
     end
 
     def create_app_directory
-      %w{app/controllers app/models app/views}.each do |dir|
+      %w{app/controllers app/views app/models}.each do |dir|
         directory dir, File.join(@app_path, dir)
       end
     end

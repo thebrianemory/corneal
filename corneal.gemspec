@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir.glob("lib/**/*") +
     [
+      "lib/templates/app/models/.gitkeep",
       "lib/templates/public/images/.gitkeep",
       "lib/templates/public/javascripts/.gitkeep"
     ] +
