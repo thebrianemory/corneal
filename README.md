@@ -1,4 +1,4 @@
-![Hazel](http://c7.github.com/hazel/images/hazel_small.png)
+![Corneal](http://c7.github.com/hazel/images/hazel_small.png)
 
 A simple Sinatra app generator, heavily based on [snfn](https://github.com/zachpendleton/snfn).
 
