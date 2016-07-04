@@ -10,7 +10,7 @@ When I was creating my first major Sinatra project, [Cook This Way](https://gith
 
 I also wanted to create a gem for future Learn students so they could easily get started building their projects. Although built with them in mind, this can get you off and running with any Sinatra app.
 
-Install the gem, run `corneal app-name`, run `bundle`, and you're all set! You can start up your server with `shotgun` and verify everything is working. It is as simple as that.
+Install the gem, run `corneal app-name`, run `bundle install`, and you're all set! You can start up your server with `shotgun` and verify everything is working. It is as simple as that.
 
 It uses a file structure similar to what you would see with Rails.
 
@@ -60,21 +60,24 @@ Directory structure:
 
 ## Example
 
-To generate your app
+To generate your app:
 
     corneal app-name
 
-After Corneal is done generating an app, you can `cd` into your apps
-directory and `shotgun`
+After Corneal is done generating your app, run `bundle install` from your app's directory:
 
-    cd app-name; shotgun
+    cd app-name
+    bundle install
+
+You can then start your server with `shotgun`:
+
+    shotgun
 
 Visit [http://localhost:9393/](http://localhost:9393/) to verify your app is running.
 
-You can verify by running the included test
+You can also verify it is working by running `rspec` to see the passing test:
 
-    rspec
-
+    1 example, 0 failures
 
 ## Contributing
 
