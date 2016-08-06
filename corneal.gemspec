@@ -20,9 +20,9 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir.glob("lib/**/*") +
     [
-      "lib/templates/app/models/.gitkeep",
-      "lib/templates/public/images/.gitkeep",
-      "lib/templates/public/javascripts/.gitkeep"
+      "lib/corneal/generators/app/templates/app/models/.gitkeep",
+      "lib/corneal/generators/app/templates/public/images/.gitkeep",
+      "lib/corneal/generators/app/templates/public/javascripts/.gitkeep"
     ] +
     Dir.glob("spec/**/*") +
     %w(Gemfile Gemfile.lock LICENSE README.md Rakefile)

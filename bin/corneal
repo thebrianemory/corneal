@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 $:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "..", "lib")))
 
-require "corneal/cli"
+require "corneal"
 
 Corneal::CLI.start
