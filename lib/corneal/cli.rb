@@ -3,7 +3,7 @@ require "thor"
 module Corneal
   class CLI < Thor
 
-    desc "--version", "Dispaly Corneal version"
+    desc "-v", "Show Corneal version number"
     map %w[-v --version] => :version
     # USAGE: corneal -v
     def version
@@ -12,8 +12,8 @@ module Corneal
 
 
     # register(class_name, subcommand_alias, usage_list_string, description_string)
-    register Corneal::Generators::AppGenerator, "new", "new", "Creates a new Sinatra application"
-    # register Corneal::Generators::ModelGenerator, "model", "model", "Generates a model"
+    register Corneal::Generators::AppGenerator, "new", "new APP_PATH", "Creates a new Sinatra application"
+    register Corneal::Generators::ModelGenerator, "model", "model NAME", "Generate a model"
 
     def self.exit_on_failure
       true

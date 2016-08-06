@@ -26,7 +26,7 @@ module Corneal
       end
 
       def self.source_root
-        File.expand_path(File.join(File.dirname(__FILE__), "..", "..", "generators", "app", "templates"))
+        File.expand_path(File.join(File.dirname(__FILE__), "templates"))
       end
 
       # Create empty directories
