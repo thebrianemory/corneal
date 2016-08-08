@@ -11,6 +11,8 @@ module Corneal
       argument :name, :type => :string, :desc => "Name of the model"
       argument :attributes, type: :array, default: [], banner: "field:type field:type"
 
+      class_option :migration, type: :boolean, default: true, desc: "Generate migration for model"
+
       def self.source_root
         File.dirname(__FILE__)
       end
@@ -38,6 +40,8 @@ module Corneal
       end
 
       def create_migration
+        return unless options[:migration]
+        
         migration_files = Dir.entries("db/migrate").select { |path| !File.directory? path }
 
         if duplicate = migration_files.find { |file| file.include?(migration_name) }
