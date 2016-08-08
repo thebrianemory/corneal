@@ -9,7 +9,7 @@ module Corneal
 
       desc "Generate an ActiveRecord model"
       argument :name, :type => :string, :desc => "Name of the model"
-      # argument :attributes, type: :array, default: []
+      argument :attributes, type: :array, default: [], banner: "field:type field:type"
 
       def self.source_root
         File.dirname(__FILE__)
@@ -22,6 +22,11 @@ module Corneal
         @table_name           = @file_name.pluralize
         @migration_name       = "create_#{@table_name}"
         @migration_class_name = @migration_name.camel_case
+
+        attributes.map! do |attribute|
+          field = attribute.split(":")
+          { name: field[0], type: (field[1] || "string") }
+        end
       end
 
       def create_model
