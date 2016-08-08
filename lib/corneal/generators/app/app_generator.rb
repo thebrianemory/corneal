@@ -35,7 +35,7 @@ module Corneal
           empty_directory File.join(@app_path, dir)
         end
 
-        empty_directory File.join(@app_path, 'db/migrate') unless @database.empty?
+        empty_directory File.join(@app_path, 'db/migrate')
 
         create_file File.join(@app_path, "lib", ".gitkeep")
         template "config/environment.rb", File.join(@app_path, "config/environment.rb")
