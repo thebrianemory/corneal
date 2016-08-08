@@ -4,13 +4,13 @@
 
 When I was creating my first major Sinatra project, [Cook This Way](https://github.com/thebrianemory/cook-this-way), while doing [Learn Verified](https://learn.co/with/thebrianemory), I was looking for a way to build a Sinatra skeleton similar to running
 
-    rails new app-name
+    rails new APP-NAME
 
 [Hazel](https://github.com/c7/hazel) was the closest thing I could find and this gem is based largely off of it. While it did provide a pretty good initial setup, I still had to tweak some things. The views were sitting in the root directory while I wanted them to reside in an app folder along with my models and controllers. There was also no environment.rb in the config folder as I had become accustom to having.
 
 I also wanted to create a gem for future Learn students so they could easily get started building their projects. Although built with them in mind, this can get you off and running with any Sinatra app.
 
-Install the gem, run `corneal app-name`, run `bundle install`, and you're all set! You can start up your server with `shotgun` and verify everything is working. It is as simple as that.
+Install the gem, run `corneal new APP-NAME`, run `bundle install`, and you're all set! You can start up your server with `shotgun` and verify everything is working. It is as simple as that.
 
 It uses a file structure similar to what you would see with Rails.
 
@@ -32,9 +32,7 @@ Directory structure:
 │   ├── initializers
 │   └── environment.rb
 ├── db
-│   ├── development.sqlite
-│   ├── schema.rb
-│   └── test.sqlite
+│   └── migrate
 ├── lib
 │   └── .gitkeep
 └── public
@@ -52,26 +50,49 @@ Directory structure:
 
     gem install corneal
 
-## Configuration
+## Commands
+```
+corneal -v              # Show Corneal version number
+corneal help [COMMAND]  # Describe available commands or one specific command
+corneal model NAME      # Generate a model
+corneal new APP-NAME    # Creates a new Sinatra application
+```
 
-* `--rvm` Create .ruby-version (ruby-2.1.0) and .ruby-gemset
-* `--bundle` Run bundle after generating the app
-* `--git` Initialize a Git repository
-
-## Example
+## Using Corneal
 
 To generate your app:
 
-    corneal app-name
+    corneal new APP-NAME
 
 After Corneal is done generating your app, run `bundle install` from your app's directory:
 
-    cd app-name
+    cd APP-NAME
     bundle install
 
 You can then start your server with `shotgun`:
 
     shotgun
+
+You can generate a model and migration file:
+
+    corneal model NAME
+
+You can also add your model attributes when you generate the model and have them added to your migration file:
+
+    corneal model NAME name:string age:integer
+
+```
+class CreateUsers < ActiveRecord::Migration
+  def change
+    create_table :users do |t|
+      t.string :name
+      t.age :integer
+
+      t.timestamps null: false
+    end
+  end
+end
+```
 
 Visit [http://localhost:9393/](http://localhost:9393/) to verify your app is running.
 

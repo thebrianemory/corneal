@@ -1,8 +1,8 @@
 module Corneal
   module VERSION
-    MAJOR = 0
-    MINOR = 1
-    TINY  = 5
+    MAJOR = 1
+    MINOR = 0
+    TINY  = 0
 
     STRING = [MAJOR, MINOR, TINY].join('.')
   end
