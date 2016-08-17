@@ -40,6 +40,10 @@ module Corneal
         template "model.rb.erb", File.join("app/models", "#{file_name}.rb")
       end
 
+      def create_controller
+        template "controller.rb.erb", File.join("app/controllers", "#{file_name}_controller.rb")
+      end
+
       def create_migration
         return unless options[:migration]
 
