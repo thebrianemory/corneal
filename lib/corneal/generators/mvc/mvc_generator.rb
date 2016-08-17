@@ -42,6 +42,7 @@ module Corneal
 
       def create_controller
         template "controller.rb.erb", File.join("app/controllers", "#{file_name}_controller.rb")
+        end
       end
 
       def create_migration
