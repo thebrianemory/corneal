@@ -42,7 +42,7 @@ module Corneal
 
       def create_controller
         template "controller.rb.erb", File.join("app/controllers", "#{file_name}_controller.rb")
-        end
+        insert_into_file "config.ru", "\nuse #{controller_class_name}Controller\n", :after => "run ApplicationController"
       end
 
       def create_migration
