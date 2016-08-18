@@ -77,9 +77,31 @@ You can generate a model and migration file:
 
     corneal model NAME
 
-You can also add your model attributes when you generate the model and have them added to your migration file:
+You can also generate an entire MVC structure complete with a migration file:
 
-    corneal model NAME name:string age:integer
+        corneal mvc NAME
+
+The resulting structure will look like this:
+
+```
+app
+├── controllers
+│   ├──application_controller.rb
+│   └──new_model_controller.rb
+├── models
+│   └──new_model.rb
+└── views
+    ├──new_models
+    │  ├──index.html.rb.erb
+    │  ├──show.html.rb.erb
+    │  ├──new.html.rb.erb
+    │  └──edit.html.rb.erb
+    ├── layout.erb
+    └── welcome.erb
+```
+You can also add your model attributes when you generate the model or MVC structure and have them added to your migration file:
+
+    corneal model/mvc NAME name:string age:integer
 
 ```
 class CreateUsers < ActiveRecord::Migration

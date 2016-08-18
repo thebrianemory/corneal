@@ -1,11 +1,11 @@
 class <%= @controller_class_name %> < ApplicationController
 
-  #Index controller
+  #Index Controller
   get '/<%=@table_name%>' do
     'Show the index view'
   end
 
-  #New Item controllers
+  #New Item Controllers
   get '/<%=@table_name%>/new' do
     'Show the New item view'
   end
@@ -16,12 +16,12 @@ class <%= @controller_class_name %> < ApplicationController
     redirect '/<%=@table_name%>'
   end
 
-  #Show Item controller
+  #Show Item Controller
   get '/<%=@table_name%>/:slug' do
     'Show an individual item'
   end
 
-  #Edit Item controller
+  #Edit Item Controller
   get '/<%=@table_name%>/:slug/edit' do
     'Shows the form to edit an individual item'
   end
@@ -32,7 +32,7 @@ class <%= @controller_class_name %> < ApplicationController
     #redirect '/<%=@table_name%>/:slug' TODO: update ':slug' with the item's :ID and uncomment
   end
 
-  #Delete item controller
+  #Delete Item Controller
   delete '/<%=@table_name%>/:slug/delete' do
     'Deletes an individual item'
 
