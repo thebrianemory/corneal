@@ -84,20 +84,20 @@ You can also generate an entire MVC structure complete with a migration file:
 The resulting structure will look like this:
 
 ```
-app
-├── controllers
-│   ├──application_controller.rb
-│   └──new_model_controller.rb
-├── models
-│   └──new_model.rb
-└── views
-    ├──new_models
-    │  ├──index.html.rb.erb
-    │  ├──show.html.rb.erb
-    │  ├──new.html.rb.erb
-    │  └──edit.html.rb.erb
-    ├── layout.erb
-    └── welcome.erb
+└─app
+  ├── controllers
+  │   ├──application_controller.rb
+  │   └──new_model_controller.rb
+  ├── models
+  │   └──new_model.rb
+  └── views
+      ├──new_models
+      │  ├──index.html.rb.erb
+      │  ├──show.html.rb.erb
+      │  ├──new.html.rb.erb
+      │  └──edit.html.rb.erb
+      ├── layout.erb
+      └── welcome.erb
 ```
 You can also add your model attributes when you generate the model or MVC structure and have them added to your migration file:
 
