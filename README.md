@@ -101,7 +101,7 @@ The resulting structure will look like this:
 ```
 You can also add your model attributes when you generate the model or MVC structure and have them added to your migration file:
 
-    corneal model/mvc NAME name:string age:integer
+    corneal [model/mvc] NAME name:string age:integer
 
 ```
 class CreateUsers < ActiveRecord::Migration
