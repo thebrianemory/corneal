@@ -37,11 +37,15 @@ module Corneal
           say "[WARNING] The model name '#{name}' was recognized as a plural, using the singular '#{model_name}' instead."
         end
 
-        template "model.rb.erb", File.join("app/models", "#{file_name}.rb")
+        template "templates/model.rb.erb", File.join("app/models", "#{file_name}.rb")
+      end
+
+      def create_views
+        
       end
 
       def create_controller
-        template "controller.rb.erb", File.join("app/controllers", "#{file_name}_controller.rb")
+        template "templates/controller.rb.erb", File.join("app/controllers", "#{file_name}_controller.rb")
         insert_into_file "config.ru", "use #{controller_class_name}\n", :after => "run ApplicationController\n"
       end
 
@@ -56,7 +60,7 @@ module Corneal
           version = Time.now.utc.strftime("%Y%m%d%H%M%S")
           migration_file_name = "#{version}_#{migration_name}.rb"
 
-          template "migration.rb.erb", File.join("db/migrate", migration_file_name)
+          template "templates/migration.rb.erb", File.join("db/migrate", migration_file_name)
         end
       end
     end
