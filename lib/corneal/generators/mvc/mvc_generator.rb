@@ -41,7 +41,7 @@ module Corneal
       end
 
       def create_views
-        
+        directory "templates/views", File.join("app/views", "#{table_name}") 
       end
 
       def create_controller
