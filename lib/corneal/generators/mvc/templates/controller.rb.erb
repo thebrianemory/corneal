@@ -2,12 +2,12 @@ class <%= @controller_class_name %> < ApplicationController
 
   #Index Controller
   get "/<%=@table_name%>" do
-    erb :"/<%=@table_name%>/index"
+    erb :"/<%=@table_name%>/index.html"
   end
 
   #New Item Controllers
   get "/<%=@table_name%>/new" do
-    erb :"/<%=@table_name%>/new"
+    erb :"/<%=@table_name%>/new.html"
   end
 
   post "/<%=@table_name%>" do
@@ -18,12 +18,12 @@ class <%= @controller_class_name %> < ApplicationController
 
   #Show Item Controller
   get "/<%=@table_name%>/:slug" do
-    erb :"/<%=@table_name%>/show"
+    erb :"/<%=@table_name%>/show.html"
   end
 
   #Edit Item Controller
   get "/<%=@table_name%>/:slug/edit" do
-    erb :"/<%=@table_name%>/edit"
+    erb :"/<%=@table_name%>/edit.html"
   end
 
   patch "/<%=@table_name%>" do

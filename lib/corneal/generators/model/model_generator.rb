@@ -41,7 +41,7 @@ module Corneal
 
       def create_migration
         return unless options[:migration]
-        
+
         migration_files = Dir.entries("db/migrate").select { |path| !File.directory? path }
 
         if duplicate = migration_files.find { |file| file.include?(migration_name) }
