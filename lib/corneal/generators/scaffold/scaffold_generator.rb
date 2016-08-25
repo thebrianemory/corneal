@@ -3,11 +3,11 @@ require 'active_support/inflector'
 
 module Corneal
   module Generators
-    class ModelGenerator < Thor::Group
+    class ScaffoldGenerator < Thor::Group
       include Thor::Actions
-      attr_reader :file_name, :class_name, :model_name, :migration_name, :migration_class_name, :table_name
+      attr_reader :file_name, :class_name, :controller_class_name, :model_name, :migration_name, :migration_class_name, :table_name
 
-      desc "Generate an ActiveRecord model"
+      desc "Generate an ActiveRecord model with it's associated views and controllers"
       argument :name, :type => :string, :desc => "Name of the model"
       argument :attributes, type: :array, default: [], banner: "field:type field:type"
 
@@ -18,12 +18,13 @@ module Corneal
       end
 
       def setup
-        @model_name           = name.singularize
-        @class_name           = model_name.camel_case
-        @file_name            = model_name.file_name
-        @table_name           = @file_name.pluralize
-        @migration_name       = "create_#{@table_name}"
-        @migration_class_name = @migration_name.camel_case
+        @model_name            = name.singularize
+        @class_name            = model_name.camel_case
+        @controller_class_name = "#{@class_name.pluralize}Controller"
+        @file_name             = model_name.file_name
+        @table_name            = @file_name.pluralize
+        @migration_name        = "create_#{@table_name}"
+        @migration_class_name  = @migration_name.camel_case
 
         attributes.map! do |attribute|
           field = attribute.split(":")
@@ -36,7 +37,16 @@ module Corneal
           say "[WARNING] The model name '#{name}' was recognized as a plural, using the singular '#{model_name}' instead."
         end
 
-        template "model.rb.erb", File.join("app/models", "#{file_name}.rb")
+        template "templates/model.rb.erb", File.join("app/models", "#{file_name}.rb")
+      end
+
+      def create_views
+        directory "templates/views", File.join("app/views", "#{table_name}")
+      end
+
+      def create_controller
+        template "templates/controller.rb.erb", File.join("app/controllers", "#{file_name}_controller.rb")
+        insert_into_file "config.ru", "use #{controller_class_name}\n", :after => "run ApplicationController\n"
       end
 
       def create_migration
@@ -50,7 +60,7 @@ module Corneal
           version = Time.now.utc.strftime("%Y%m%d%H%M%S")
           migration_file_name = "#{version}_#{migration_name}.rb"
 
-          template "migration.rb.erb", File.join("db/migrate", migration_file_name)
+          template "templates/migration.rb.erb", File.join("db/migrate", migration_file_name)
         end
       end
     end
