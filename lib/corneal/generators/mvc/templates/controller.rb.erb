@@ -5,36 +5,34 @@ class <%= @controller_class_name %> < ApplicationController
     erb :"/<%=@table_name%>/index.html"
   end
 
-  #New Item Controllers
+  # New Item Controllers
   get "/<%=@table_name%>/new" do
     erb :"/<%=@table_name%>/new.html"
   end
 
   post "/<%=@table_name%>" do
-    "Create a new item"
+    # Creates a new item
 
     redirect "/<%=@table_name%>"
   end
 
-  #Show Item Controller
-  get "/<%=@table_name%>/:slug" do
+  # Show Item Controller
+  get "/<%=@table_name%>/:id" do
     erb :"/<%=@table_name%>/show.html"
   end
 
-  #Edit Item Controller
-  get "/<%=@table_name%>/:slug/edit" do
+  # Edit Item Controller
+  get "/<%=@table_name%>/:id/edit" do
     erb :"/<%=@table_name%>/edit.html"
   end
 
   patch "/<%=@table_name%>" do
-    "Edits an individual item"
-
-    #redirect "/<%=@table_name%>/:slug" TODO: update ":slug" with the item"s :ID and uncomment
+    # Edits an individual item
   end
 
-  #Delete Item Controller
-  delete "/<%=@table_name%>/:slug/delete" do
-    "Deletes an individual item"
+  # Delete Item Controller
+  delete "/<%=@table_name%>/:id/delete" do
+    # Deletes an individual item
 
     redirect "/<%=@table_name%>"
   end
