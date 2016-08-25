@@ -3,7 +3,7 @@ require 'active_support/inflector'
 
 module Corneal
   module Generators
-    class MVCGenerator < Thor::Group
+    class ScaffoldGenerator < Thor::Group
       include Thor::Actions
       attr_reader :file_name, :class_name, :controller_class_name, :model_name, :migration_name, :migration_class_name, :table_name
 
