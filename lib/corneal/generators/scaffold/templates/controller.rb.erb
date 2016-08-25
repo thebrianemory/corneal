@@ -11,8 +11,6 @@ class <%= @controller_class_name %> < ApplicationController
   end
 
   post "/<%=@table_name%>" do
-    # Creates a new item
-
     redirect "/<%=@table_name%>"
   end
 
@@ -27,13 +25,11 @@ class <%= @controller_class_name %> < ApplicationController
   end
 
   patch "/<%=@table_name%>" do
-    # Edits an individual item
+    redirect "/<%=@table_name%>/:id"
   end
 
   # Delete Item Controller
   delete "/<%=@table_name%>/:id/delete" do
-    # Deletes an individual item
-
     redirect "/<%=@table_name%>"
   end
 end
