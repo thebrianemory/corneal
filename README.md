@@ -55,6 +55,7 @@ Directory structure:
 corneal -v              # Show Corneal version number
 corneal help [COMMAND]  # Describe available commands or one specific command
 corneal model NAME      # Generate a model
+corneal scaffold NAME   # Generates your model, controller, and views
 corneal new APP-NAME    # Creates a new Sinatra application
 ```
 
@@ -79,7 +80,7 @@ You can generate a model and migration file:
 
 You can also generate an entire MVC structure complete with a migration file:
 
-        corneal mvc NAME
+        corneal scaffold NAME
 
 The resulting structure will look like this:
 
@@ -99,9 +100,10 @@ The resulting structure will look like this:
       ├── layout.erb
       └── welcome.erb
 ```
-You can also add your model attributes when you generate the model or MVC structure and have them added to your migration file:
 
-    corneal [model/mvc] NAME name:string age:integer
+You can also add your model attributes when you generate the scaffold structure and have them added to your migration file:
+
+    corneal [model/scaffold] NAME name:string age:integer
 
 ```
 class CreateUsers < ActiveRecord::Migration
