@@ -2,6 +2,7 @@
 
 require "rake/testtask"
 require "bundler/gem_tasks"
+require "pry"
 
 Rake::TestTask.new(:spec) do |test|
   test.libs << 'lib' << 'spec'
@@ -9,3 +10,7 @@ Rake::TestTask.new(:spec) do |test|
 end
 
 task :default => :spec
+
+task :console do
+  Pry.start
+end
