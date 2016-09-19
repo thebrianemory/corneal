@@ -25,19 +25,10 @@ module Corneal
         @table_name            = @file_name.pluralize
         @migration_name        = "create_#{@table_name}"
         @migration_class_name  = @migration_name.camel_case
-
-        attributes.map! do |attribute|
-          field = attribute.split(":")
-          { name: field[0], type: (field[1] || "string") }
-        end
       end
 
       def create_model
-        unless model_name == name
-          say "[WARNING] The model name '#{name}' was recognized as a plural, using the singular '#{model_name}' instead."
-        end
-
-        template "templates/model.rb.erb", File.join("app/models", "#{file_name}.rb")
+        ModelGenerator.new([name, attributes]).invoke_all
       end
 
       def create_views
@@ -49,20 +40,6 @@ module Corneal
         insert_into_file "config.ru", "use #{controller_class_name}\n", :after => "run ApplicationController\n"
       end
 
-      def create_migration
-        return unless options[:migration]
-
-        migration_files = Dir.entries("db/migrate").select { |path| !File.directory? path }
-
-        if duplicate = migration_files.find { |file| file.include?(migration_name) }
-          say_status :identical, "db/migrate/#{duplicate}", :blue
-        else
-          version = Time.now.utc.strftime("%Y%m%d%H%M%S")
-          migration_file_name = "#{version}_#{migration_name}.rb"
-
-          template "templates/migration.rb.erb", File.join("db/migrate", migration_file_name)
-        end
-      end
     end
   end
 end

@@ -20,7 +20,7 @@ module Corneal
       def setup
         @model_name           = name.singularize
         @class_name           = model_name.camel_case
-        @file_name            = model_name.file_name
+        @file_name             = model_name.file_name
         @table_name           = @file_name.pluralize
         @migration_name       = "create_#{@table_name}"
         @migration_class_name = @migration_name.camel_case
