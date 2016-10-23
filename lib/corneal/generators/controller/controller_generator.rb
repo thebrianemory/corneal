@@ -30,7 +30,7 @@ module Corneal
       end
 
       def create_views
-        # return unless options[:views]
+        return unless options[:views]
         directory "templates/views", File.join("app/views", "#{controller_name}")
       end
     end
