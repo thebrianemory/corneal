@@ -9,7 +9,6 @@ module Corneal
 
       desc "Generate an Controller with associated views"
       argument :name, type: :string, desc: "Name of the controller"
-      # argument :actions, type: :array, default: [], banner: "action action"
 
       # --no-views make views optional
       class_option :views, type: :boolean, default: true, desc: "Generate views for controller"
