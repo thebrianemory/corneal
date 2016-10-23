@@ -1,0 +1,37 @@
+class <%= class_name %> < ApplicationController
+
+  # GET: /<%= controller_name %>
+  get "/<%= controller_name %>" do
+    erb :"/<%= controller_name %>/index.html"
+  end
+
+  # GET: /<%= controller_name %>/new
+  get "/<%= controller_name %>/new" do
+    erb :"/<%= controller_name %>/new.html"
+  end
+
+  # POST: /<%= controller_name %>
+  post "/<%= controller_name %>" do
+    redirect "/<%= controller_name %>"
+  end
+
+  # GET: /<%= controller_name %>/5
+  get "/<%= controller_name %>/:id" do
+    erb :"/<%= controller_name %>/show.html"
+  end
+
+  # GET: /<%= controller_name %>/5/edit
+  get "/<%= controller_name %>/:id/edit" do
+    erb :"/<%= controller_name %>/edit.html"
+  end
+
+  # PATCH: /<%= controller_name %>/5
+  patch "/<%= controller_name %>/:id" do
+    redirect "/<%= controller_name %>/:id"
+  end
+
+  # DELETE: /<%= controller_name %>/5/delete
+  delete "/<%= controller_name %>/:id/delete" do
+    redirect "/<%= controller_name %>"
+  end
+end
