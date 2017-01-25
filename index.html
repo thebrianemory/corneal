@@ -13,10 +13,20 @@
       <h3>Corneal allows you to quickly generate a Sinatra template with Rails-like simplicity.</h3>
       <ul class="list-font">
         <li>Install the gem with <code>gem install corneal</code></li>
-        <li>Generate your app with <code>corneal app-name</code></li>
+        <li>Generate your app with <code>corneal new APP-NAME</code></li>
         <li>Run <code>bundle</code></li>
       </ul>
+
       <p>You can then verify the installation checking the test with <code>rspec</code> or running the server with <code>shotgun</code> and visiting <a href="http://localhost:9393">http://localhost:9393</a>.</p>
+
+      <h4>Other available commands:</h4>
+      <ul class="list-font">
+        <li>Generate a model: <code>corneal model NAME </code></li>
+        <li>Generate a controller: <code>corneal controller NAME</code></li>
+        <li>Generate a controller with no views: <code>corneal controller NAME --no-views</code></li>
+        <li>Generate a model with its associated views and controllers: <code>corneal scaffold NAME</code></li>
+      </ul>
+
       <p>You can see the full <a href="https://github.com/thebrianemory/corneal">README on GitHub</a>.</p>
     </div>
   </div>
