@@ -54,7 +54,7 @@ Directory structure:
 ```
 corneal -v              # Show Corneal version number
 corneal help [COMMAND]  # Describe available commands or one specific command
-corneal new APP_PATH    # Creates a new Sinatra application
+corneal new APP-NAME    # Creates a new Sinatra application
 corneal model NAME      # Generate a model
 corneal controller NAME # Generate a controller
 corneal scaffold NAME   # Generate a model with its associated views and controllers
