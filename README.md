@@ -54,10 +54,12 @@ Directory structure:
 ```
 corneal -v              # Show Corneal version number
 corneal help [COMMAND]  # Describe available commands or one specific command
+corneal new APP_PATH    # Creates a new Sinatra application
 corneal model NAME      # Generate a model
-corneal scaffold NAME   # Generates your model, controller, and views
-corneal new APP-NAME    # Creates a new Sinatra application
+corneal controller NAME # Generate a controller
+corneal scaffold NAME   # Generate a model with its associated views and controllers
 ```
+The controller generator also have an optional views flag `--no-views` to create controllers without views.
 
 ## Using Corneal
 
@@ -80,7 +82,7 @@ You can generate a model and migration file:
 
 You can also generate an entire MVC structure complete with a migration file:
 
-        corneal scaffold NAME
+    corneal scaffold NAME
 
 The resulting structure will look like this:
 
