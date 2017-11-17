@@ -1,0 +1,65 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AppGenerator	lib/corneal/generators/app/app_generator.rb	/^    class AppGenerator < Thor::Group$/;"	c	class:Corneal.Generators
+ApplicationController	lib/corneal/generators/app/templates/app/controllers/application_controller.rb	/^class ApplicationController < Sinatra::Base$/;"	c
+CLI	lib/corneal/cli.rb	/^  class CLI < Thor$/;"	c	class:Corneal
+ControllerGenerator	lib/corneal/generators/controller/controller_generator.rb	/^    class ControllerGenerator < Thor::Group$/;"	c	class:Corneal.Generators
+Corneal	lib/corneal.rb	/^module Corneal$/;"	m
+Corneal	lib/corneal/cli.rb	/^module Corneal$/;"	m
+Corneal	lib/corneal/generators/app/app_generator.rb	/^module Corneal$/;"	m
+Corneal	lib/corneal/generators/controller/controller_generator.rb	/^module Corneal$/;"	m
+Corneal	lib/corneal/generators/model/model_generator.rb	/^module Corneal$/;"	m
+Corneal	lib/corneal/generators/scaffold/scaffold_generator.rb	/^module Corneal$/;"	m
+Corneal	lib/corneal/version.rb	/^module Corneal$/;"	m
+Corneal	lib/extensions/string.rb	/^module Corneal$/;"	m
+Extensions	lib/extensions/string.rb	/^  module Extensions$/;"	m	class:Corneal
+Generators	lib/corneal/generators/app/app_generator.rb	/^  module Generators$/;"	m	class:Corneal
+Generators	lib/corneal/generators/controller/controller_generator.rb	/^  module Generators$/;"	m	class:Corneal
+Generators	lib/corneal/generators/model/model_generator.rb	/^  module Generators$/;"	m	class:Corneal
+Generators	lib/corneal/generators/scaffold/scaffold_generator.rb	/^  module Generators$/;"	m	class:Corneal
+ModelGenerator	lib/corneal/generators/model/model_generator.rb	/^    class ModelGenerator < Thor::Group$/;"	c	class:Corneal.Generators
+ScaffoldGenerator	lib/corneal/generators/scaffold/scaffold_generator.rb	/^    class ScaffoldGenerator < Thor::Group$/;"	c	class:Corneal.Generators
+String	lib/extensions/string.rb	/^    module String$/;"	m	class:Corneal.Extensions
+VERSION	lib/corneal/version.rb	/^  module VERSION$/;"	m	class:Corneal
+app	lib/corneal/generators/app/templates/spec/application_controller_spec.rb	/^def app$/;"	f
+app	lib/corneal/generators/app/templates/spec/spec_helper.rb	/^def app$/;"	f
+camel_case	lib/extensions/string.rb	/^      def camel_case$/;"	f	class:Corneal.Extensions.String
+camel_case!	lib/extensions/string.rb	/^      def camel_case!$/;"	f	class:Corneal.Extensions.String
+create_app_directory	lib/corneal/generators/app/app_generator.rb	/^      def create_app_directory$/;"	f	class:Corneal.Generators.AppGenerator
+create_app_spec	lib/corneal/generators/app/app_generator.rb	/^      def create_app_spec$/;"	f	class:Corneal.Generators.AppGenerator
+create_capistrano_config	lib/corneal/generators/app/app_generator.rb	/^      def create_capistrano_config$/;"	f	class:Corneal.Generators.AppGenerator
+create_config	lib/corneal/generators/app/app_generator.rb	/^      def create_config$/;"	f	class:Corneal.Generators.AppGenerator
+create_controller	lib/corneal/generators/controller/controller_generator.rb	/^      def create_controller$/;"	f	class:Corneal.Generators.ControllerGenerator
+create_controller	lib/corneal/generators/scaffold/scaffold_generator.rb	/^      def create_controller$/;"	f	class:Corneal.Generators.ScaffoldGenerator
+create_database_initializer	lib/corneal/generators/app/app_generator.rb	/^      def create_database_initializer$/;"	f	class:Corneal.Generators.AppGenerator
+create_db_config	lib/corneal/generators/app/app_generator.rb	/^      def create_db_config$/;"	f	class:Corneal.Generators.AppGenerator
+create_empty_directories	lib/corneal/generators/app/app_generator.rb	/^      def create_empty_directories$/;"	f	class:Corneal.Generators.AppGenerator
+create_gemfile	lib/corneal/generators/app/app_generator.rb	/^      def create_gemfile$/;"	f	class:Corneal.Generators.AppGenerator
+create_migration	lib/corneal/generators/model/model_generator.rb	/^      def create_migration$/;"	f	class:Corneal.Generators.ModelGenerator
+create_model	lib/corneal/generators/model/model_generator.rb	/^      def create_model$/;"	f	class:Corneal.Generators.ModelGenerator
+create_model	lib/corneal/generators/scaffold/scaffold_generator.rb	/^      def create_model$/;"	f	class:Corneal.Generators.ScaffoldGenerator
+create_public_directory	lib/corneal/generators/app/app_generator.rb	/^      def create_public_directory$/;"	f	class:Corneal.Generators.AppGenerator
+create_rakefile	lib/corneal/generators/app/app_generator.rb	/^      def create_rakefile$/;"	f	class:Corneal.Generators.AppGenerator
+create_readme	lib/corneal/generators/app/app_generator.rb	/^      def create_readme$/;"	f	class:Corneal.Generators.AppGenerator
+create_redis_config	lib/corneal/generators/app/app_generator.rb	/^      def create_redis_config$/;"	f	class:Corneal.Generators.AppGenerator
+create_redis_initializer	lib/corneal/generators/app/app_generator.rb	/^      def create_redis_initializer$/;"	f	class:Corneal.Generators.AppGenerator
+create_rvm_gemset	lib/corneal/generators/app/app_generator.rb	/^      def create_rvm_gemset$/;"	f	class:Corneal.Generators.AppGenerator
+create_spec_helper	lib/corneal/generators/app/app_generator.rb	/^      def create_spec_helper$/;"	f	class:Corneal.Generators.AppGenerator
+create_views	lib/corneal/generators/controller/controller_generator.rb	/^      def create_views$/;"	f	class:Corneal.Generators.ControllerGenerator
+directory_name	lib/extensions/string.rb	/^      def directory_name$/;"	f	class:Corneal.Extensions.String
+exit_on_failure	lib/corneal/cli.rb	/^    def self.exit_on_failure$/;"	F	class:Corneal.CLI
+file_name	lib/extensions/string.rb	/^      def file_name$/;"	f	class:Corneal.Extensions.String
+file_name!	lib/extensions/string.rb	/^      def file_name!$/;"	f	class:Corneal.Extensions.String
+initialize_git_repo	lib/corneal/generators/app/app_generator.rb	/^      def initialize_git_repo$/;"	f	class:Corneal.Generators.AppGenerator
+install_dependencies	lib/corneal/generators/app/app_generator.rb	/^      def install_dependencies$/;"	f	class:Corneal.Generators.AppGenerator
+setup	lib/corneal/generators/app/app_generator.rb	/^      def setup$/;"	f	class:Corneal.Generators.AppGenerator
+setup	lib/corneal/generators/controller/controller_generator.rb	/^      def setup$/;"	f	class:Corneal.Generators.ControllerGenerator
+setup	lib/corneal/generators/model/model_generator.rb	/^      def setup$/;"	f	class:Corneal.Generators.ModelGenerator
+source_root	lib/corneal/generators/app/app_generator.rb	/^      def self.source_root$/;"	F	class:Corneal.Generators.AppGenerator
+source_root	lib/corneal/generators/controller/controller_generator.rb	/^      def self.source_root$/;"	F	class:Corneal.Generators.ControllerGenerator
+source_root	lib/corneal/generators/model/model_generator.rb	/^      def self.source_root$/;"	F	class:Corneal.Generators.ModelGenerator
+version	lib/corneal/cli.rb	/^    def version$/;"	f	class:Corneal.CLI
