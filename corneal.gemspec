@@ -14,7 +14,6 @@ Gem::Specification.new do |spec|
   spec.licenses    = "MIT"
 
   spec.executables = ['corneal']
-  spec.default_executable = 'corneal'
 
   spec.require_paths = [%q{lib}]
 
