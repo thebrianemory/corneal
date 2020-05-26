@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
     %w(Gemfile Gemfile.lock LICENSE README.md Rakefile)
 
   spec.add_runtime_dependency('thor', '~> 0.18')
-  spec.add_runtime_dependency('activesupport', '~> 5.0')
+  spec.add_runtime_dependency('activesupport', '>= 5', '< 7')
   spec.add_development_dependency('bundler', '~> 1.5', '>= 1.5.1')
   spec.add_development_dependency('minitest', '~> 5.2')
 end
