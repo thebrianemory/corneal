@@ -2,52 +2,52 @@ require_relative "spec_helper"
 require_relative "../lib/extensions/string.rb"
 
 describe String do
-  it "should ignore an already camel cased string" do
-    "MyApp".camel_case.must_equal "MyApp"
+  it "returns the same camel cased string" do
+    expect("MyApp".camel_case).to eq "MyApp"
   end
 
-  it "should capitalize an all lower case string" do
-    "myapp".camel_case.must_equal "Myapp"
+  it "returns the first letter capitalized" do
+    expect("myapp".camel_case).to eq "Myapp"
   end
 
-  it "should camel case a lower case string with underscores" do
-    "my_app".camel_case.must_equal "MyApp"
+  it "returns a camel cased string when receives an string with underscores" do
+    expect("my_app".camel_case).to eq "MyApp"
   end
 
-  it "should camel case a lower case string with hyphens" do
-    "my-app".camel_case.must_equal "MyApp"
+  it "returns a camel cased string when receives an string with hyphens" do
+    expect("my-app".camel_case).to eq "MyApp"
   end
 
-  it "should camel case an uppercase string with underscores" do
-    "MY_APP".camel_case.must_equal "MyApp"
+  it "returns a camel cased string when receives an uppercase string with underscores" do
+    expect("MY_APP".camel_case).to eq "MyApp"
   end
 
-  it "should camel case an uppercase string with hyphens" do
-    "MY-APP".camel_case.must_equal "MyApp"
+  it "returns a camel cased string when receives an uppercase string with hyphens" do
+    expect("MY-APP".camel_case).to eq "MyApp"
   end
 
-  it "should camel case a string with a hyphen preceding a capital letter" do
-    "my_App".camel_case.must_equal "MyApp"
+  it "returns a camel cased string when receives an hyphen preceding a capital letter" do
+    expect("my_App".camel_case).to eq "MyApp"
   end
 
-  it "should underscore a camel cased string" do
-    "MyApp".file_name.must_equal "my_app"
+  it "returns an underscore string when receives a camel cased string" do
+    expect("MyApp".file_name).to eq "my_app"
   end
 
-  it "should underscore a hypenated string" do
-    "my-app".file_name.must_equal "my_app"
+  it "returns an underscore string when receives a hypenated string" do
+    expect("my-app".file_name).to eq "my_app"
   end
 
-  it "should ignore an already underscored string" do
-    "my_app".file_name.must_equal "my_app"
+  it "returns the same underscored string" do
+    expect("my_app".file_name).to eq "my_app"
   end
 
-  it "should_underscore_a_string_with_a_hyphen_preceding_a_capital_letter" do
-    "my_App".file_name.must_equal "my_app"
+  it "returns an underscore string when receives a hyphen preceding a capital letter" do
+    expect("my_App".file_name).to eq "my_app"
   end
 
-  it "should allow dashes in directory names, but not in filenames" do
-    "my-App".directory_name.must_equal "my-app"
-    "my-App".file_name.must_equal "my_app"
+  it "allows dashes in directory names but not in filenames" do
+    expect("my-App".directory_name).to eq "my-app"
+    expect("my-App".file_name).to eq "my_app"
   end
 end

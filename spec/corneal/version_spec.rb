@@ -10,18 +10,18 @@ describe Corneal::VERSION do
   let(:string) { subject::STRING }
 
   it "should have a major version" do
-    major.must_be_kind_of Fixnum
+    expect(major).to be_a_kind_of Fixnum
   end
 
   it "should have a minor version" do
-    minor.must_be_kind_of Fixnum
+    expect(minor).to be_a_kind_of Fixnum
   end
 
   it "should have a tiny version" do
-    tiny.must_be_kind_of Fixnum
+    expect(tiny).to be_a_kind_of Fixnum
   end
 
   it "should have a string representation of the version number" do
-    string.must_equal "#{major}.#{minor}.#{tiny}"
+    expect(string).to eq "#{major}.#{minor}.#{tiny}"
   end
 end
